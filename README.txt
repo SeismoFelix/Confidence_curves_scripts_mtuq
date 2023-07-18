@@ -3,7 +3,7 @@
 
 For running this scripts you have to provide some input parameters. Type:
 
-Python  K_GFs_GridSearch.DoubleCouple_SW_BW_options.py -h, for further information. 
+Python  FK_GFs_GridSearch.DoubleCouple_SW_BW_options.py -h, for further information. 
 
 For this event, type the following for launching the grid-search:
 
