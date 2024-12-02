@@ -1,11 +1,16 @@
-1. Run the MTUQ grid search only for surface waves example by typing in the terminal:
+This example demonstrates how to calculate confidence curves in MTUQ using only surface waves, based on the default GridSearch.DoubleCouple.py example:
+
+https://github.com/uafgeotools/mtuq/blob/master/examples/GridSearch.DoubleCouple.py
+
+1. Run the MTUQ grid search
+
+Open your terminal and execute the following command:
 
 python syngine_GFs_GridSearch.DC_SW_Confidence_Curve.py -event 20090407201255351 -evla 61.454 -evlo -149.742 -evdp 33033.59 -mw 4.5 -time 2009-04-07T20:12:55.00000Z -np 40 -fb 16-40 -wl 150
 
-The parameters are setup as they are in the original MTUQ example. Still, if you wish feel free to explore other parameters. 
+This command runs the grid search with parameters similar to the original MTUQ example, but focuses on surface waves. Feel free to modify parameters to explore other solutions. 
 
-After (1) the following files will be created in the directory OUTPUT_20090407201255351DC:
-
+After the grid search completes, you'll find the following output files in the OUTPUT_20090407201255351DC directory:
 
 -20090407201255351DC_beachball.png
 -20090407201255351DC_data_stats.txt
@@ -18,14 +23,15 @@ After (1) the following files will be created in the directory OUTPUT_2009040720
 -20090407201255351DC_waveforms.png
 
 
-The file 20090407201255351DC_likelihoods_angles.nc is the most relevant for calculating the confidence curve since contain the information of the likelihood of other solutions sorted by their angular distance to the reference moment tensor. 
+The 20090407201255351DC_likelihoods_angles.nc file is crucial for calculating the confidence curve, as it contains the likelihoods of different moment tensor solutions, organized by their angular distance from the best-fitting solution.
 
+2. Calculate the confidence curve
 
-2. Calculate confidence curve by typing in the terminal: 
+Run the following command in your terminal:
 
 python confidence_curve_calculation.py
 
-After (2) the followingg files will be created: 
+After running the script, you'll obtain these PDF files in OUTPUT_20090407201255351DC:
 
 angle_vs_cumulative_likelihood_and_derivative.pdf
 confidence_curve.pdf
